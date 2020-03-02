@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /*Definieer een lege array om namen van cursisten bij te houden.Definieer een functie “ingeven”. Hierin vraag je: Geef de naam van de cursist in. (0 om testoppen).Controleer op annuleren, niets ingegeven en toon een foutmelding indien dit het geval is.Controleer verder of er een 0 is ingegeven, dat is de aanduiding dat de gebruiker wil stoppenmet namen ingeven. Toon dan de melding: U bent gestopt met cursisten ingeven. En roepvervolgens de functie “tonen” op.Indien er een correcte naam is ingegeven voeg je deze toe aan de array en roep je defunctie “ingeven” opnieuw op.*/
+
+        var namenCursisten = [];
+
+        while (true) {
+            var naam = prompt(
+                "Gelieve de naam van uw cursist in te geven: Geef 0 in om te stoppen."
+            );
+            if (naam == "0") {
+                alert("U bent gestopt met cursisten ingeven.");
+                tonen();
+                break;
+            } else if (naam == null) {
+                document.write("U heeft geannuleerd");
+                break;
+            } else if (naam.length == 0) {
+                alert("U heeft niets ingegeven.");
+            } else {
+                ingeven(naam);
+            }
+        }
+
+        function ingeven(naam) {
+            namenCursisten.push(naam);
+            console.log(namenCursisten);
+        }
+
+        function tonen() {
+            document.write(namenCursisten);
+        }
+    </script>
+</body>
+
+</html>
