@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+</head>
+
+<body>
+    <p>"Godslastering en andere vuile woorden zullen gecensureerd worden!"</p>
+    <form name="form">
+        <input type="text" name="zoek" />
+        <input type="button" name="button" value=" Vervang" onclick="vervangen(tekst,document.form.zoek.value, gecensureerd);" />
+    </form>
+    <script>
+        var tekst =
+            "Godslastering en andere vuile woorden zullen gecensureerd worden!";
+        var censuur = "Welk woord wil je censureren?";
+        var gecensureerd = "GECENSUREERD";
+
+        function vervangen(tekst, zoek, nieuw) {
+            if (tekst.indexOf(zoek) == -1) {
+                document.write("Dat woord vind ik niet!");
+            } else if (tekst.indexOf(zoek) != -1) {
+                deel1 = tekst.substr(0, tekst.indexOf(zoek)) + nieuw;
+                deel2 = tekst.substring(
+                    tekst.indexOf(zoek) + zoek.length,
+                    tekst.length
+                );
+                tekst = deel1 + deel2;
+                document.write(tekst);
+            }
+        }
+    </script>
+</body>
+
+</html>
