@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var dagvandeweek = prompt("Gelieve de dag van de week in te geven: ");
+        var dagenvandeweek = [
+            "zondag",
+            "maandag",
+            "dinsdag",
+            "woensdag",
+            "donderdag",
+            "vrijdag",
+            "zaterdag"
+        ];
+        var index = dagenvandeweek.indexOf(dagvandeweek);
+        console.log(index);
+        if (dagvandeweek == null) {
+            document.write("U heeft geanulleerd");
+        } else if (dagvandeweek.length == 0) {
+            document.write("U heeft geen gegevens ingevuld");
+        } else if (index < 0) {
+            document.write(
+                "U heeft geen weekdag ingegeven met de juist schrijfwijze!"
+            );
+        } else if (dagvandeweek == "zaterdag" || dagvandeweek == "zondag") {
+            document.write("Hoera, het is weekend!");
+        } else {
+            document.write("Helaas, het is een werkdag");
+        }
+    </script>
+</body>
+
+</html>
