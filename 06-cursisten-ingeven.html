@@ -33,11 +33,17 @@
 
         function ingeven(naam) {
             namenCursisten.push(naam);
-            console.log(namenCursisten);
         }
 
         function tonen() {
-            document.write(namenCursisten);
+            if (namenCursisten.length == 0) {
+                document.write("Er zijn geen cursisten ingegeven.");
+            } else {
+                document.write("Dit zijn de cursisten: ");
+                for (var x = 0; x < namenCursisten.length; x++) {
+                    document.write("<br/>" + (x + 1) + ". " + namenCursisten[x]);
+                }
+            }
         }
     </script>
 </body>
