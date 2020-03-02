@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var scores = [30, 410, 10, 490];
+        var grootsteGetal = scores[0];
+        console.log(scores[0 + 1]);
+
+        for (var x = 0; x < scores.length; x++) {
+            if (scores[x + 1] > grootsteGetal) {
+                grootsteGetal = scores[x + 1];
+                index = scores.indexOf(grootsteGetal);
+            }
+        }
+        document.write("Het grootste getal is: " + grootsteGetal);
+        document.write("<br/>staat in de array op de plaats: " + index);
+    </script>
+</body>
+
+</html>
