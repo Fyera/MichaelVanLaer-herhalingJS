@@ -9,8 +9,8 @@
 
 <body>
     <form name="form">
-        <input type="number" name="getal1" />
-        <input type="number" name="getal2" />
+        <input type="text" name="getal1" />
+        <input type="text" name="getal2" />
         <input type="button" name="machtsverheffing" value="machtsverheffing" onclick="bereken(document.form.getal1.value, document.form.getal2.value);" />
         <input type="text" id="result" />
     </form>
@@ -22,11 +22,14 @@
                 isNaN(getal1) ||
                 isNaN(getal2)
             ) {
-                document.write("Gelieve je invoer na te kijken.");
+                document.getElementById("result").value = document.write(
+                    "Gelieve je invoer na te kijken."
+                );
             } else {
-                var getal3 = machtsverheffing(getal1, getal2);
-                console.log(getal3);
-                document.getElementById("result").value = getal3;
+                document.getElementById("result").value = machtsverheffing(
+                    getal1,
+                    getal2
+                );
             }
         }
 
