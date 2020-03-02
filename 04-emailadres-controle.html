@@ -14,22 +14,16 @@
         if (email == null) {
             document.write("U heeft geannuleerd.");
         } else {
-            var emailShort = email.substr(0, email.indexOf("@"));
-            console.log(email.indexOf("@"));
-            console.log(email.indexOf("."));
-            console.log(email.indexOf(" "));
-            console.log(emailShort);
-
             if (email.length == 0) {
                 document.write("U heeft geen gegevens ingevuld");
             } else if (
-                email.indexOf("@") < 0 ||
-                email.indexOf(".") < 0 ||
-                email.indexOf(" ") >= 0
+                email.indexOf("@") == -1 ||
+                email.indexOf(".") == -1 ||
+                email.indexOf(" ") != -1
             ) {
                 document.write("Dit lijkt geen correct emailadres te zijn!");
-            } else if (emailShort.length < 2) {
-                document.write("Er moeten minstens 2 tekens voor de @staan.");
+            } else if (email.substr(0, email.indexOf("@")).length < 3) {
+                document.write("Er moeten minstens 2 tekens voor de @ staan.");
             } else {
                 document.write("Ziet er goed uit!");
             }
