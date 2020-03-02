@@ -9,19 +9,16 @@
 
 <body>
     <p>"Godslastering en andere vuile woorden zullen gecensureerd worden!"</p>
-    <form name="form">
-        <input type="text" name="zoek" />
-        <input type="button" name="button" value=" Vervang" onclick="vervangen(tekst,document.form.zoek.value, gecensureerd);" />
-    </form>
     <script>
         var tekst =
             "Godslastering en andere vuile woorden zullen gecensureerd worden!";
-        var censuur = "Welk woord wil je censureren?";
+        var censuur = prompt("Welk woord wil je censureren?");
         var gecensureerd = "GECENSUREERD";
 
         function vervangen(tekst, zoek, nieuw) {
             if (tekst.indexOf(zoek) == -1) {
-                document.write("Dat woord vind ik niet!");
+                tekst = "Dat woord vind ik niet!";
+                return tekst;
             } else if (tekst.indexOf(zoek) != -1) {
                 deel1 = tekst.substr(0, tekst.indexOf(zoek)) + nieuw;
                 deel2 = tekst.substring(
@@ -29,9 +26,10 @@
                     tekst.length
                 );
                 tekst = deel1 + deel2;
-                document.write(tekst);
+                return tekst;
             }
         }
+        document.write("<br/>" + vervangen(tekst, censuur, gecensureerd));
     </script>
 </body>
 
