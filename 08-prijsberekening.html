@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /*Via prompts vraag je de kostprijs, btw percentage en aantal stuks op. Valideer deze:annuleren, iets ingevuld, is het een getal.Je moet niet voor elke ingave apart controleren, maar mag controleren nadat alle 3 degetallen opgevraagd zijn, en een combinatie maken, dus bv.if(getal1 == null || getal2 == null || getal3 == null){Indien alles juist is ingevuld:Bereken de totale prijs en druk deze dan af in het document met een document.write().Bv.Voor een prijs van 10, btw van 0.21 en 2 stuks is de totale prijs 24.2.*/
+
+        var kostprijs = parseFloat(prompt("Geef de kostprijs in: "));
+        var btwPercentage = parseInt(prompt("Geef het btw percentage in: "));
+        var btw = btwPercentage / 100;
+        var btwprijs = kostprijs * btw;
+        var totaal1stuk = kostprijs + btwprijs;
+        var stuks = prompt("Hoeveel wenst u te bestellen?");
+
+        if (kostprijs == null || btwPercentage == null || stuks == null) {
+            document.write("U heeft geannuleerd");
+        } else if (
+            kostprijs == 0 ||
+            btwPercentage == 0 ||
+            stuks == 0 ||
+            isNaN(kostprijs) ||
+            isNaN(btwPercentage) ||
+            isNaN(stuks)
+        ) {
+            document.write("Foutieve ingave");
+        } else {
+            var totaal = (btwprijs + kostprijs) * stuks;
+            document.write(
+                "Voor een prijs van " +
+                kostprijs +
+                ", btw van " +
+                btw +
+                " en " +
+                stuks +
+                " stuks is de totale prijs " +
+                totaal
+            );
+        }
+    </script>
+</body>
+
+</html>
