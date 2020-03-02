@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+</head>
+
+<body>
+    <form name="form">
+        <input type="number" name="getal1" />
+        <input type="number" name="getal2" />
+        <input type="button" name="machtsverheffing" value="machtsverheffing" onclick="bereken(document.form.getal1.value, document.form.getal2.value);" />
+        <input type="text" id="result" />
+    </form>
+    <script>
+        function bereken(getal1, getal2) {
+            if (
+                getal1 == null ||
+                getal2 == null ||
+                isNaN(getal1) ||
+                isNaN(getal2)
+            ) {
+                document.write("Gelieve je invoer na te kijken.");
+            } else {
+                var getal3 = machtsverheffing(getal1, getal2);
+                console.log(getal3);
+                document.getElementById("result").value = getal3;
+            }
+        }
+
+        function machtsverheffing(getal1, getal2) {
+            var getal4 = parseInt(getal1);
+            var getal3 = 0;
+            for (var x = 2; x <= getal2; x++) {
+                getal3 = getal4 * parseInt(getal1);
+                getal4 = getal3;
+            }
+            return getal4;
+        }
+    </script>
+</body>
+
+</html>
