@@ -8,10 +8,10 @@
 </head>
 
 <body>
-    <p>"Godslastering en andere vuile woorden zullen gecensureerd worden!"</p>
     <script>
         var tekst =
             "Godslastering en andere vuile woorden zullen gecensureerd worden!";
+        document.write('<p>"' + tekst + '"</p>');
         var censuur = prompt("Welk woord wil je censureren?");
         var gecensureerd = "GECENSUREERD";
 
@@ -20,7 +20,7 @@
                 tekst = "Dat woord vind ik niet!";
                 return tekst;
             } else if (tekst.indexOf(zoek) != -1) {
-                deel1 = tekst.substr(0, tekst.indexOf(zoek)) + nieuw;
+                deel1 = tekst.substring(0, tekst.indexOf(zoek)) + nieuw;
                 deel2 = tekst.substring(
                     tekst.indexOf(zoek) + zoek.length,
                     tekst.length
